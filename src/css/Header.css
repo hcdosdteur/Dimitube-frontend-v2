@@ -1,0 +1,133 @@
+#main-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 102;
+	background-color: white;
+}
+
+#main-header h2 {
+	margin: 0;
+	margin-left: 6px;
+}
+
+#main-header nav {
+	height: 100%;
+}
+
+#main-header ul {
+	height: 100%;
+	width: 135px;
+	display: flex;
+	justify-content: space-between;
+	padding-inline-start: 0px;
+	padding-inline-end: 20px;
+	margin: 0;
+}
+
+#main-header ul li {
+	font-size: 20px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+#main-header ul li img {
+	font-size: 20px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+}
+
+#header-left {
+	display: flex;
+	align-items: center;
+}
+
+#logo-box {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	user-select: none;
+}
+
+#logo {
+	width: 35px;
+	height: 35px;
+}
+
+#menu-btn {
+	width: 40px;
+	height: 40px;
+	margin: 0 16px;
+	border-radius: 50%;
+	background-image: url(../img/menu.png);
+	background-repeat: no-repeat;
+	background-size: 25px 17px;
+	background-position: center;
+	filter: opacity(0.5);
+	z-index: 4;
+	cursor: pointer;
+	border: solid 1px white;
+	box-sizing: border-box;
+}
+
+.clickEffect-menu-btn {
+	animation: clickEffect-menu-btn 0.2s ease-out;
+}
+
+@keyframes clickEffect-menu-btn {
+	0% {
+		border: solid 1px rgb(120, 120, 120);
+		background-color: rgb(200, 200, 200);
+	}
+
+	100% {
+		border: solid 1px rgb(120, 120, 120, 0.1);
+		background-color: white;
+	}
+}
+
+#menu-btn:active {
+	background-color: rgb(200, 200, 200);
+}
+
+#search-container {
+	position: relative;
+	display: flex;
+	width: 660px;
+	min-width: 200px;
+	height: 40px;
+	border-radius: 20px;
+	background-color: rgb(240, 240, 240);
+	margin: 0 20px;
+	padding: 0 20px;
+	align-items: center;
+	justify-content: center;
+}
+
+#search-container input[type="text"] {
+	width: 100%;
+	background-color: transparent;
+	border: none;
+	font-size: 18px;
+	line-height: 30px;
+	padding: 5px;
+	outline: none;
+}
+
+#search-container img {
+	width: 28px;
+	height: 28px;
+	padding-left: 18px;
+	padding-right: 5px;
+	padding-top: 2px;
+	cursor: pointer;
+}

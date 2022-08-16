@@ -1,0 +1,10 @@
+#contents-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: min(calc(100vh - 150px));
+	width: calc(100% - 72px);
+	margin-top: 60px;
+	margin-left: 72px;
+	position: relative;
+}

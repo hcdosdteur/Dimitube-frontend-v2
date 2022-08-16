@@ -1,0 +1,15 @@
+body {
+	margin: 0;
+	background-color: rgb(245, 245, 245);
+}
+
+ul {
+	list-style: none;
+}
+
+#root {
+	position: relative;
+	height: min(calc(100vh - 60px));
+	top: 0;
+	left: 0;
+}
