@@ -1,5 +1,5 @@
 import "css/Header.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "./Sidebar";
 
@@ -13,13 +13,16 @@ function Header() {
 
 	const [isOpen, setIsopen] = useState(false);
 	const [isClose, setIsClose] = useState(false);
+	const [windowSize, setWindowSize] = useState({
+		width: window.innerWidth,
+		height: window.innerHeight,
+	});
 
-	const menuBtnClickEvent = (menu: HTMLElement) => {
-		menu.className = "clickEffect-menu-btn";
-		menu.addEventListener("animationend", () => {
-			menu.classList.remove("clickEffect-menu-btn");
+	const resizing = () => {
+		setWindowSize({
+			width: window.innerWidth,
+			height: window.innerHeight,
 		});
-		ToggleSidebar();
 	};
 
 	const ToggleSidebar = () => {
@@ -28,26 +31,32 @@ function Header() {
 			setIsClose(true);
 			setTimeout(() => {
 				setIsClose(false);
-			}, 200);
+			}, 100);
 		}
 	};
+
+	useEffect(() => {
+		window.addEventListener("resize", resizing);
+		return () => {
+			window.removeEventListener("resize", resizing);
+		};
+	}, []);
 
 	return (
 		<div>
 			<header id="main-header">
-				<div id="header-left">
-					<div
-						onClick={(e) => menuBtnClickEvent(e.target as any)}
-						id="menu-btn"
-					></div>
+				<div className="header-left">
 					<Link style={style.link} to="/">
-						<div id="logo-box">
-							<img id="logo" src={require("img/logo.png")} alt="" />
+						<div className="logo-box">
+							<img className="logo" src={require("img/logo.png")} alt="" />
 							<h2>Dimitube</h2>
 						</div>
 					</Link>
 				</div>
-				<div id="search-container">
+				<div
+					id="search-container"
+					className={`${windowSize.width <= 650 ? "hidden" : ""}`}
+				>
 					<input type="text" />
 					<Link to="/search">
 						<img src={require("img/search.png")} alt="" />
@@ -55,6 +64,13 @@ function Header() {
 				</div>
 				<nav>
 					<ul>
+						<li
+							className={`li-search ${windowSize.width > 650 ? "hidden" : ""}`}
+						>
+							<Link to="/search">
+								<img src={require("img/search.png")} alt="" />
+							</Link>
+						</li>
 						<li>
 							<Link to="/setting">
 								<img
@@ -85,11 +101,7 @@ function Header() {
 					</ul>
 				</nav>
 			</header>
-			<Sidebar
-				isOpen={isOpen}
-				isClose={isClose}
-				toggleSidebar={ToggleSidebar}
-			/>
+			<Sidebar isOpen={isOpen} toggleSidebar={ToggleSidebar} />
 		</div>
 	);
 }

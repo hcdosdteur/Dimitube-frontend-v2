@@ -5,8 +5,8 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 101;
-	transition: 0.2s;
+	z-index: 102;
+	transition: 0.1s;
 }
 
 .sidebar.active {
@@ -20,10 +20,10 @@
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.4);
-	transition: 0.2s;
+	transition: 0.1s;
 	opacity: 0;
 	visibility: hidden;
-	z-index: 100;
+	z-index: 101;
 }
 
 .sidebar-overlay.active {
@@ -35,8 +35,41 @@
 	pointer-events: none;
 }
 
+#sb-header {
+	height: 60px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+}
+#sb-inner-header {
+	display: flex;
+	align-items: center;
+	width: 240px;
+}
+
+.logo-box h2 {
+	font-size: 1.5em;
+	font-weight: bolder;
+	margin-left: 6px;
+	letter-spacing: -0.2px;
+}
+
+#menu-btn {
+	width: 40px;
+	height: 40px;
+	margin: 0px 16px;
+	border-radius: 50%;
+	background-image: url(../img/menu.png);
+	background-repeat: no-repeat;
+	background-size: 22px 15px;
+	background-position: center;
+	filter: opacity(0.5);
+	cursor: pointer;
+	border: solid 1px white;
+	box-sizing: border-box;
+}
+
 #sb-body {
-	margin-top: 60px;
 	padding: 15px;
 	max-height: calc(100vh - 60px);
 	overflow-x: hidden;
@@ -52,7 +85,17 @@
 }
 
 #sb-body ul li {
-	margin-bottom: 12px;
+	margin-bottom: 15px;
+}
+
+.subtitle {
+	width: 42px;
+	font-size: 12px;
+	text-align: center;
+}
+
+.subtitle.active {
+	display: none;
 }
 
 #sb-body ul li .sb-link {

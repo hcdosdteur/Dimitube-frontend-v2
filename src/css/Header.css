@@ -1,13 +1,13 @@
 #main-header {
 	position: fixed;
 	top: 0;
-	left: 0;
-	width: 100%;
+	right: 0;
+	width: calc(100% - 72px);
 	height: 60px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	z-index: 102;
+	z-index: 100;
 	background-color: white;
 }
 
@@ -22,23 +22,25 @@
 
 #main-header ul {
 	height: 100%;
-	width: 135px;
 	display: flex;
 	justify-content: space-between;
 	padding-inline-start: 0px;
-	padding-inline-end: 20px;
+	padding-inline-end: 0px;
 	margin: 0;
 }
 
-#main-header ul li {
-	font-size: 20px;
+#main-header ul li:not(.li-search.hidden) {
 	height: 100%;
 	display: flex;
+	margin-right: 20px;
 	align-items: center;
 }
 
+.li-search.hidden {
+	display: none;
+}
+
 #main-header ul li img {
-	font-size: 20px;
 	height: 100%;
 	display: flex;
 	align-items: center;
@@ -46,37 +48,22 @@
 	height: 30px;
 }
 
-#header-left {
+.header-left {
 	display: flex;
 	align-items: center;
 }
 
-#logo-box {
+.logo-box {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	user-select: none;
+	overflow: hidden;
 }
 
-#logo {
+.logo {
 	width: 35px;
 	height: 35px;
-}
-
-#menu-btn {
-	width: 40px;
-	height: 40px;
-	margin: 0 16px;
-	border-radius: 50%;
-	background-image: url(../img/menu.png);
-	background-repeat: no-repeat;
-	background-size: 25px 17px;
-	background-position: center;
-	filter: opacity(0.5);
-	z-index: 4;
-	cursor: pointer;
-	border: solid 1px white;
-	box-sizing: border-box;
 }
 
 .clickEffect-menu-btn {
@@ -111,6 +98,10 @@
 	padding: 0 20px;
 	align-items: center;
 	justify-content: center;
+}
+
+#search-container.hidden {
+	display: none;
 }
 
 #search-container input[type="text"] {
