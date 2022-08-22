@@ -1,5 +1,5 @@
-import Header from "moblie/component/Header";
-import "moblie/css/contents-container.css";
+import Header from "../component/Header";
+import "../css/contents-container.scoped.scss";
 
 function MoblieMain() {
 	return (

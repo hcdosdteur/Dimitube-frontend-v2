@@ -1,5 +1,6 @@
-import "pc/css/NotFound.css";
+import "../css/NotFound.scoped.scss";
 import { Link, useNavigate } from "react-router-dom";
+import logo from '../../img/logo.png'
 
 function PcNotFound() {
 	const navigate = useNavigate();
@@ -14,7 +15,7 @@ function PcNotFound() {
 	return (
 		<div style={style.flex} id="notFound-container">
 			<div style={style.flex}>
-				<img id="notFound-logo" src={require("img/logo.png")} alt="" />
+				<img id="notFound-logo" src={logo} alt="" />
 				<div>
 					<h1 id="error-title">
 						<span id="error404">404</span> ERROR

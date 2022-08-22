@@ -1,5 +1,6 @@
-import "pc/css/contents-container.css";
+import "../css/contents-container.scoped.scss";
 import { Link } from "react-router-dom";
+import logo from '../../img/logo.png';
 
 function PcSignIn() {
 	const style = {
@@ -26,7 +27,7 @@ function PcSignIn() {
 	return (
 		<div style={style.container}>
 			<div style={style.title}>
-				<img style={style.logoImg} src={require("img/logo.png")} alt="" />{" "}
+				<img style={style.logoImg} src={logo} alt="" />{" "}
 				<span style={style.fontSize}>Dimitube</span>
 			</div>
 			<h1 style={style.h1}>PcSignIn Page</h1>

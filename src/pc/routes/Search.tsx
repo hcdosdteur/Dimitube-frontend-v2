@@ -1,5 +1,5 @@
-import Header from "pc/component/Header";
-import "pc/css/contents-container.css";
+import Header from "../component/Header";
+import "../css/contents-container.scoped.scss";
 
 function PcSearch() {
 	return (
