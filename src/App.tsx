@@ -6,6 +6,8 @@ import PcSignIn from "pc/routes/SignIn";
 import PcSetting from "pc/routes/Setting";
 import PcChannel from "pc/routes/Channel";
 import PcSearch from "pc/routes/Search";
+import MoblieMain from "moblie/routes/Main";
+import MoblieNotFound from "moblie/routes/NotFound";
 
 function App() {
 	return (
@@ -23,7 +25,16 @@ function App() {
 				</BrowserRouter>
 			</BrowserView>
 			<MobileView>
-				<h1>모바일 버전 개발중...</h1>
+				<BrowserRouter>
+					<Routes>
+						<Route path="/" element={<MoblieMain />} />
+						{/* <Route path="/setting" element={<PcSetting />} />
+						<Route path="/signin" element={<PcSignIn />} />
+						<Route path="/channel" element={<PcChannel />} />
+						<Route path="/search" element={<PcSearch />} /> */}
+						<Route path="*" element={<MoblieNotFound />} />
+					</Routes>
+				</BrowserRouter>
 			</MobileView>
 		</div>
 	);

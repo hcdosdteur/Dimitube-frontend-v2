@@ -5,7 +5,7 @@ function PcSetting() {
 	return (
 		<div>
 			<Header />
-			<div id="contents-container">
+			<div id="pc-contents-container">
 				<h1>PcSetting Page</h1>
 			</div>
 		</div>

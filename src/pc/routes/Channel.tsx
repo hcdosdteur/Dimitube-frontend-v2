@@ -5,7 +5,7 @@ function PcChannel() {
 	return (
 		<div>
 			<Header />
-			<div id="contents-container">
+			<div id="pc-contents-container">
 				<h1>PcChannel Page</h1>
 			</div>
 		</div>

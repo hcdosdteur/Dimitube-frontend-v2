@@ -5,7 +5,7 @@ function PcSearch() {
 	return (
 		<div>
 			<Header />
-			<div id="contents-container">
+			<div id="pc-contents-container">
 				<h1>PcSearch Page</h1>
 			</div>
 		</div>
