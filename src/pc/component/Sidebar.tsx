@@ -1,5 +1,4 @@
-import "css/Sidebar.css";
-import { Link } from "react-router-dom";
+import "pc/css/Sidebar.css";
 
 type SidebarProps = {
 	isOpen: boolean;

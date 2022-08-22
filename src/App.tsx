@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { BrowserView, MobileView } from "react-device-detect";
-import NotFound from "routes/NotFound";
-import Main from "routes/Main";
-import SignIn from "routes/SignIn";
-import Setting from "routes/Setting";
-import Channel from "routes/Channel";
-import Search from "routes/Search";
+import PcNotFound from "pc/routes/NotFound";
+import PcMain from "pc/routes/Main";
+import PcSignIn from "pc/routes/SignIn";
+import PcSetting from "pc/routes/Setting";
+import PcChannel from "pc/routes/Channel";
+import PcSearch from "pc/routes/Search";
 
 function App() {
 	return (
@@ -13,12 +13,12 @@ function App() {
 			<BrowserView>
 				<BrowserRouter>
 					<Routes>
-						<Route path="/" element={<Main />} />
-						<Route path="/setting" element={<Setting />} />
-						<Route path="/signin" element={<SignIn />} />
-						<Route path="/channel" element={<Channel />} />
-						<Route path="/search" element={<Search />} />
-						<Route path="*" element={<NotFound />} />
+						<Route path="/" element={<PcMain />} />
+						<Route path="/setting" element={<PcSetting />} />
+						<Route path="/signin" element={<PcSignIn />} />
+						<Route path="/channel" element={<PcChannel />} />
+						<Route path="/search" element={<PcSearch />} />
+						<Route path="*" element={<PcNotFound />} />
 					</Routes>
 				</BrowserRouter>
 			</BrowserView>

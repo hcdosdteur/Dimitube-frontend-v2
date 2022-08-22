@@ -1,11 +1,14 @@
-import "css/contents-container.css";
+import "pc/css/contents-container.css";
 import { Link } from "react-router-dom";
 
-function SignIn() {
+function PcSignIn() {
 	const style = {
 		container: {
 			justifyContent: "center",
 			margin: "100px",
+			marginTop: "50px",
+			zIndex: "1000",
+			backgroundColor: "rgb(245, 245, 245)",
 		},
 		h1: {
 			height: "50px",
@@ -26,7 +29,7 @@ function SignIn() {
 				<img style={style.logoImg} src={require("img/logo.png")} alt="" />{" "}
 				<span style={style.fontSize}>Dimitube</span>
 			</div>
-			<h1 style={style.h1}>SignIn Page</h1>
+			<h1 style={style.h1}>PcSignIn Page</h1>
 			<Link style={style.fontSize} to="/">
 				SignIn
 			</Link>
@@ -34,4 +37,4 @@ function SignIn() {
 	);
 }
 
-export default SignIn;
+export default PcSignIn;

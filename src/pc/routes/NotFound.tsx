@@ -1,7 +1,7 @@
-import "css/NotFound.css";
+import "pc/css/NotFound.css";
 import { Link, useNavigate } from "react-router-dom";
 
-function NotFound() {
+function PcNotFound() {
 	const navigate = useNavigate();
 	const style = {
 		flex: {
@@ -44,4 +44,4 @@ function NotFound() {
 	);
 }
 
-export default NotFound;
+export default PcNotFound;
