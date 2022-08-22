@@ -1,4 +1,4 @@
-import "moblie/css/Header.css";
+import "../css/Header.scoped.scss";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 

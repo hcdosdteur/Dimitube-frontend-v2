@@ -1,4 +1,9 @@
-import "pc/css/Sidebar.css";
+import "../css/Sidebar.scoped.scss";
+import home from '../../img/home.png';
+import logo from '../../img/logo.png';
+import explore from '../../img/explore.png';
+import history from '../../img/history.png';
+import subscribe from '../../img/subscribe.png';
 
 type SidebarProps = {
 	isOpen: boolean;
@@ -24,7 +29,7 @@ function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
 							id="menu-btn"
 						></div>
 						<div className="logo-box">
-							<img className="logo" src={require("img/logo.png")} alt="" />
+							<img className="logo" src={logo} alt="" />
 							<h2>Dimitube</h2>
 						</div>
 					</div>
@@ -33,7 +38,7 @@ function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
 					<ul>
 						<li>
 							<div className="sb-link">
-								<img src={require("img/home.png")} alt=""></img>
+								<img src={home} alt=""></img>
 								<span>HOME</span>
 							</div>
 							<div className={`subtitle ${isOpen === true ? "active" : ""}`}>
@@ -42,7 +47,7 @@ function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
 						</li>
 						<li>
 							<div className="sb-link">
-								<img src={require("img/explore.png")} alt=""></img>
+								<img src={explore} alt=""></img>
 								<span>EXPLORER</span>
 							</div>
 							<div className={`subtitle ${isOpen === true ? "active" : ""}`}>
@@ -51,7 +56,7 @@ function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
 						</li>
 						<li>
 							<div className="sb-link">
-								<img src={require("img/history.png")} alt=""></img>
+								<img src={history} alt=""></img>
 								<span>HISTORY</span>
 							</div>
 							<div className={`subtitle ${isOpen === true ? "active" : ""}`}>
@@ -60,7 +65,7 @@ function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
 						</li>
 						<li>
 							<div className="sb-link">
-								<img src={require("img/subscribe.png")} alt=""></img>
+								<img src={subscribe} alt=""></img>
 								<span>SUBSCRIBE</span>
 							</div>
 							<div className={`subtitle ${isOpen === true ? "active" : ""}`}>

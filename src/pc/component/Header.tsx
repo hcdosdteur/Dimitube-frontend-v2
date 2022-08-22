@@ -1,6 +1,11 @@
-import "pc/css/Header.css";
+import "../css/Header.scoped.scss";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import logo from '../../img/logo.png';
+import search from '../../img/search.png';
+import Icon_feather_settings from '../../img/Icon_feather-settings.png';
+import Icon_feather_user from '../../img/Icon_feather-user.png';
+import logout_icon from '../../img/logout_icon.png';
 import Sidebar from "./Sidebar";
 
 function Header() {
@@ -48,7 +53,7 @@ function Header() {
 				<div className="header-left">
 					<Link style={style.link} to="/">
 						<div className="logo-box">
-							<img className="logo" src={require("img/logo.png")} alt="" />
+							<img className="logo" src={logo} alt="" />
 							<h2>Dimitube</h2>
 						</div>
 					</Link>
@@ -59,7 +64,7 @@ function Header() {
 				>
 					<input type="text" />
 					<Link to="/search">
-						<img src={require("img/search.png")} alt="" />
+						<img src={search} alt="" />
 					</Link>
 				</div>
 				<nav>
@@ -68,14 +73,14 @@ function Header() {
 							className={`li-search ${windowSize.width > 650 ? "hidden" : ""}`}
 						>
 							<Link to="/search">
-								<img src={require("img/search.png")} alt="" />
+								<img src={search} alt="" />
 							</Link>
 						</li>
 						<li>
 							<Link to="/setting">
 								<img
 									className="header-img"
-									src={require("img/Icon_feather-settings.png")}
+									src={Icon_feather_settings}
 									alt=""
 								/>
 							</Link>
@@ -84,7 +89,7 @@ function Header() {
 							<Link to="/channel">
 								<img
 									className="header-img"
-									src={require("img/Icon_feather-user.png")}
+									src={Icon_feather_user}
 									alt=""
 								/>
 							</Link>
@@ -93,7 +98,7 @@ function Header() {
 							<Link to="/signin">
 								<img
 									className="header-img"
-									src={require("img/logout_icon.png")}
+									src={logout_icon}
 									alt=""
 								/>
 							</Link>
