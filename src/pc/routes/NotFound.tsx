@@ -1,6 +1,6 @@
-import "../css/NotFound.scoped.scss";
+import "@pc/css/NotFound.scoped.scss";
 import { Link, useNavigate } from "react-router-dom";
-import logo from '../../img/logo.png'
+import logo from "@img/logo.png";
 
 function PcNotFound() {
 	const navigate = useNavigate();

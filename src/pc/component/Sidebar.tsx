@@ -1,9 +1,10 @@
-import "../css/Sidebar.scoped.scss";
-import home from '../../img/home.png';
-import logo from '../../img/logo.png';
-import explore from '../../img/explore.png';
-import history from '../../img/history.png';
-import subscribe from '../../img/subscribe.png';
+import "@pc/css/Sidebar.scoped.scss";
+import home from "@img/home.png";
+import logo from "@img/logo.png";
+import explore from "@img/explore.png";
+import history from "@img/history.png";
+import subscribe from "@img/subscribe.png";
+import "@pc/css/Header.scoped.scss";
 
 type SidebarProps = {
 	isOpen: boolean;

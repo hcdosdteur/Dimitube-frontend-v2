@@ -1,11 +1,11 @@
-import "../css/Header.scoped.scss";
+import "@pc/css/Header.scoped.scss";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import logo from '../../img/logo.png';
-import search from '../../img/search.png';
-import Icon_feather_settings from '../../img/Icon_feather-settings.png';
-import Icon_feather_user from '../../img/Icon_feather-user.png';
-import logout_icon from '../../img/logout_icon.png';
+import logo from "@img/logo.png";
+import search from "@img/search.png";
+import Icon_feather_settings from "@img/Icon_feather-settings.png";
+import Icon_feather_user from "@img/Icon_feather-user.png";
+import logout_icon from "@img/logout_icon.png";
 import Sidebar from "./Sidebar";
 
 function Header() {
@@ -87,20 +87,12 @@ function Header() {
 						</li>
 						<li>
 							<Link to="/channel">
-								<img
-									className="header-img"
-									src={Icon_feather_user}
-									alt=""
-								/>
+								<img className="header-img" src={Icon_feather_user} alt="" />
 							</Link>
 						</li>
 						<li>
 							<Link to="/signin">
-								<img
-									className="header-img"
-									src={logout_icon}
-									alt=""
-								/>
+								<img className="header-img" src={logout_icon} alt="" />
 							</Link>
 						</li>
 					</ul>

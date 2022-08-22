@@ -1,6 +1,6 @@
-import "../css/contents-container.scoped.scss";
+import "@pc/css/contents-container.scoped.scss";
 import { Link } from "react-router-dom";
-import logo from '../../img/logo.png';
+import logo from "@img/logo.png";
 
 function PcSignIn() {
 	const style = {

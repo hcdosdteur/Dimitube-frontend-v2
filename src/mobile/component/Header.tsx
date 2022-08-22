@@ -1,4 +1,4 @@
-import "../css/Header.scoped.scss";
+import "@mobile/css/Header.scoped.scss";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
