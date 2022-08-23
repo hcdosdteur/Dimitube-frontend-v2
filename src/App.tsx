@@ -8,6 +8,7 @@ import PcChannel from "@pc/routes/Channel";
 import PcSearch from "@pc/routes/Search";
 import MobileMain from "@mobile/routes/Main";
 import MobileNotFound from "@mobile/routes/NotFound";
+import MobileChannel from "@mobile/routes/Channel";
 
 function App() {
 	return (
@@ -28,10 +29,10 @@ function App() {
 				<BrowserRouter>
 					<Routes>
 						<Route path="/" element={<MobileMain />} />
-						{/* <Route path="/setting" element={<PcSetting />} />
-						<Route path="/signin" element={<PcSignIn />} />
-						<Route path="/channel" element={<PcChannel />} />
-						<Route path="/search" element={<PcSearch />} /> */}
+						{/* <Route path="/setting" element={<PcSetting />} /> */}
+						{/* <Route path="/signin" element={<PcSignIn />} /> */}
+						<Route path="/channel" element={<MobileChannel />} />
+						{/* <Route path="/search" element={<PcSearch />} /> */}
 						<Route path="*" element={<MobileNotFound />} />
 					</Routes>
 				</BrowserRouter>

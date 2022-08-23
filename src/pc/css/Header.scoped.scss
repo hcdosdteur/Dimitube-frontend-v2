@@ -61,6 +61,13 @@
 	overflow: hidden;
 }
 
+.logo-box h2 {
+	font-size: 1.5em;
+	font-weight: bolder;
+	margin-left: 6px;
+	letter-spacing: $logo-letter-spacing;
+}
+
 .logo {
 	width: 35px;
 	height: 35px;

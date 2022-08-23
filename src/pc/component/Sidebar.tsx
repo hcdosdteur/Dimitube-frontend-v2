@@ -31,7 +31,7 @@ function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
 						></div>
 						<div className="logo-box">
 							<img className="logo" src={logo} alt="" />
-							<h2>Dimitube</h2>
+							<h2>DimiTube</h2>
 						</div>
 					</div>
 				</div>
