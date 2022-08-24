@@ -1,5 +1,9 @@
 @media (max-width: $breakpoint-tablet) {
 	#contents-container {
-		padding-top: 50px;
+		position: relative;
+		width: 100%;
+		padding: 48px 0;
+		display: flex;
+		flex-direction: column;
 	}
 }

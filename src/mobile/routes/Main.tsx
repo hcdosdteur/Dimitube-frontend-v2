@@ -1,4 +1,5 @@
 import Header from "@mobile/component/Header";
+import Video from "@mobile/component/Video";
 import "@mobile/css/contents-container.scoped.scss";
 
 function MobileMain() {
@@ -6,7 +7,12 @@ function MobileMain() {
 		<div>
 			<Header />
 			<div id="contents-container">
-				<h1>MobileMain Page</h1>
+				<Video />
+				<Video />
+				<Video />
+				<Video />
+				<Video />
+				<Video />
 			</div>
 		</div>
 	);
