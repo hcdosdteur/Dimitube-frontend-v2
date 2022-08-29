@@ -1,6 +1,7 @@
 import "@mobile/css/video.scss";
 import profile from "@img/pop-cat.gif";
 import tmp_thumnail from "@img/temp_thumnail.png";
+import { Link } from "react-router-dom";
 
 function Video() {
 	const styles = {
@@ -13,21 +14,25 @@ function Video() {
 	};
 	return (
 		<div className="video-component-container">
-			<div className="thumbnail_hyperLink">
-				<a href="">
+			<Link to="/watch">
+				<div className="thumbnail_hyperLink">
 					<div style={styles.thumnail} className="thumbnail"></div>
-				</a>
-			</div>
+				</div>
+			</Link>
 			<div className="video-information">
 				<div className="video-profile-container">
-					<div style={styles.profile} className="video-profile"></div>
+					<Link to="/channel">
+						<div style={styles.profile} className="video-profile"></div>
+					</Link>
 				</div>
 				<div className="video-texts">
-					<h3 className="video-title">
-						<div>video title</div>
-					</h3>
-					{/* <div>description</div> */}
-					<div className="video-views">조회수 14만회</div>
+					<Link to="/watch">
+						<h3 className="video-title">
+							<div>video title</div>
+						</h3>
+						{/* <div>description</div> */}
+						<div className="video-views">조회수 14만회</div>
+					</Link>
 				</div>
 			</div>
 		</div>

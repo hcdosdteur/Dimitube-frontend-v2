@@ -17,6 +17,7 @@ ul {
 		justify-content: space-between;
 		background-color: rgb(245, 245, 245);
 		z-index: 100;
+		transition: 0.2s;
 	}
 
 	#header-top {
@@ -28,6 +29,14 @@ ul {
 	#header-bottom {
 		margin-top: 1px;
 		bottom: 0;
+	}
+
+	#header-top.up {
+		top: -48px;
+	}
+
+	#header-top.down {
+		top: 0;
 	}
 
 	#header-bottom nav {
@@ -51,7 +60,7 @@ ul {
 	#header-bottom img:not(.upload) {
 		width: 22px;
 		height: 22px;
-		padding: 4px 13px;
+		padding: 4.5px 13px;
 		padding-bottom: 2px;
 	}
 
@@ -113,4 +122,9 @@ ul {
 		border-radius: 50%;
 		padding: 12px;
 	}
+
+	// #search-box {
+	//   position: absolute;
+	//   display: flex;
+	// }
 }

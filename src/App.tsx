@@ -9,6 +9,9 @@ import PcSearch from "@pc/routes/Search";
 import MobileMain from "@mobile/routes/Main";
 import MobileNotFound from "@mobile/routes/NotFound";
 import MobileChannel from "@mobile/routes/Channel";
+import MobileWatch from "./mobile/routes/Watch";
+import MobileSearch from "./mobile/routes/Search";
+import MobileUpload from "./mobile/routes/Upload";
 
 function App() {
 	return (
@@ -29,10 +32,11 @@ function App() {
 				<BrowserRouter>
 					<Routes>
 						<Route path="/" element={<MobileMain />} />
-						{/* <Route path="/setting" element={<PcSetting />} /> */}
-						{/* <Route path="/signin" element={<PcSignIn />} /> */}
+						<Route path="/watch" element={<MobileWatch />} />
+						<Route path="/upload" element={<MobileUpload />} />
+						{/* <Route path="/signin" element={<MobileSignIn />} /> */}
 						<Route path="/channel" element={<MobileChannel />} />
-						{/* <Route path="/search" element={<PcSearch />} /> */}
+						<Route path="/search" element={<MobileSearch />} />
 						<Route path="*" element={<MobileNotFound />} />
 					</Routes>
 				</BrowserRouter>

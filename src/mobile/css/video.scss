@@ -1,6 +1,12 @@
+a {
+	text-decoration: none;
+	color: black;
+}
+
 @media (max-width: $breakpoint-tablet) {
 	.video-component-container {
 		box-sizing: border-box;
+		height: 100%;
 	}
 
 	.thumbnail_hyperLink {
@@ -11,7 +17,7 @@
 		border-bottom: 1px solid #0000001a;
 	}
 
-	.thumbnail_hyperLink > a {
+	.thumbnail_hyperLink > div {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -29,6 +35,7 @@
 	}
 
 	.video-information {
+		position: relative;
 		display: flex;
 		margin-top: 4px;
 		margin-left: 12px;
@@ -38,10 +45,10 @@
 
 	.video-profile-container {
 		display: flex;
+		position: relative;
 		width: 40px;
 		height: 40px;
 		margin-right: 12px;
-		justify-content: center;
 	}
 
 	.video-profile {

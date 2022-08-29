@@ -9,7 +9,7 @@ import videos from "@img/videos.png";
 import Icon_feather_settings from "@img/Icon_feather-settings.png";
 import subscribe from "@img/subscribe.png";
 import profile from "@img/pop-cat.gif";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Link } from "react-router-dom";
 
 function Header() {
@@ -19,10 +19,40 @@ function Header() {
 			color: "black",
 		},
 	};
+	const headerTop = useRef<HTMLDivElement>(null);
+	let lastScrollY = 0;
+	let nowDirection: string = "";
+
+	const handleScroll = useCallback(() => {
+		const scrollY = window.scrollY;
+		const headerTop_cur = headerTop.current;
+		const direction: string = scrollY > lastScrollY ? "down" : "up";
+		lastScrollY = scrollY;
+		if (nowDirection !== direction) {
+			if (direction === "down") {
+				headerTop_cur?.classList.add("up");
+				headerTop_cur?.classList.remove("down");
+			} else if (direction === "up") {
+				headerTop_cur?.classList.add("down");
+				headerTop_cur?.classList.remove("up");
+			}
+		}
+		nowDirection = direction;
+	}, []);
+
+	useEffect(() => {
+		window.addEventListener("scroll", handleScroll, { capture: true });
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
 
 	return (
 		<div id="header-container">
-			<div id="header-top">
+			{/* <div id="search-box">
+        <div></div>
+      </div> */}
+			<div id="header-top" ref={headerTop}>
 				<div id="logo-box">
 					<Link style={style.link} to="/">
 						<img src={logo} alt="" />
