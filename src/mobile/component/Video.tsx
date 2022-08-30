@@ -1,9 +1,13 @@
-import "@mobile/css/video.scss";
+import "@mobile/css/video.scoped.scss";
 import profile from "@img/pop-cat.gif";
 import tmp_thumnail from "@img/temp_thumnail.png";
 import { Link } from "react-router-dom";
 
-function Video() {
+interface videoProps {
+	idx: number;
+}
+
+function Video({ idx }: videoProps) {
 	const styles = {
 		thumnail: {
 			backgroundImage: `url(${tmp_thumnail})`,
@@ -28,7 +32,7 @@ function Video() {
 				<div className="video-texts">
 					<Link to="/watch">
 						<h3 className="video-title">
-							<div>video title</div>
+							<div>{idx}</div>
 						</h3>
 						{/* <div>description</div> */}
 						<div className="video-views">조회수 14만회</div>

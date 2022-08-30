@@ -6,6 +6,7 @@ import explore from "@img/explore.png";
 import mobile_upload from "@img/mobile_upload_1.png";
 import history from "@img/history.png";
 import videos from "@img/videos.png";
+import back from "@img/back.png";
 import Icon_feather_settings from "@img/Icon_feather-settings.png";
 import subscribe from "@img/subscribe.png";
 import profile from "@img/pop-cat.gif";
@@ -19,14 +20,22 @@ function Header() {
 			color: "black",
 		},
 	};
+
+	const [searchDetail, setSearchDetail] = useState<boolean>(false);
 	const headerTop = useRef<HTMLDivElement>(null);
+
 	let lastScrollY = 0;
 	let nowDirection: string = "";
+
+	const searchToggle = () => {
+		searchDetail === false ? setSearchDetail(true) : setSearchDetail(false);
+	};
 
 	const handleScroll = useCallback(() => {
 		const scrollY = window.scrollY;
 		const headerTop_cur = headerTop.current;
-		const direction: string = scrollY > lastScrollY ? "down" : "up";
+		const direction: string =
+			scrollY > lastScrollY && scrollY >= 48 ? "down" : "up";
 		lastScrollY = scrollY;
 		if (nowDirection !== direction) {
 			if (direction === "down") {
@@ -49,9 +58,13 @@ function Header() {
 
 	return (
 		<div id="header-container">
-			{/* <div id="search-box">
-        <div></div>
-      </div> */}
+			<div className={`search-box ${searchDetail ? "" : "hidden"}`}>
+				<img className="back" src={back} onClick={searchToggle} alt="" />
+				<input className="input-box" type="text" />
+				<Link to="/search">
+					<img className="search" src={search} alt="" />
+				</Link>
+			</div>
 			<div id="header-top" ref={headerTop}>
 				<div id="logo-box">
 					<Link style={style.link} to="/">
@@ -62,7 +75,7 @@ function Header() {
 				<nav className="btn-box">
 					<ul>
 						<li>
-							<button className="btn">
+							<button className="btn" onClick={searchToggle}>
 								<img src={search} alt="" />
 							</button>
 						</li>

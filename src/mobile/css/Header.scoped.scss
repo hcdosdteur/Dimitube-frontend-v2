@@ -7,7 +7,7 @@ ul {
 }
 
 @media (max-width: $breakpoint-tablet) {
-	#header-container > div {
+	#header-container > div:not(.search-box) {
 		position: fixed;
 		width: 100vw;
 		height: 48px;
@@ -123,8 +123,40 @@ ul {
 		padding: 12px;
 	}
 
-	// #search-box {
-	//   position: absolute;
-	//   display: flex;
-	// }
+	#header-container .search-box {
+		position: fixed;
+		z-index: 102;
+		display: flex;
+		width: 100%;
+		height: 48px;
+		background-color: rgb(245, 245, 245);
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.search-box.hidden {
+		display: none !important;
+	}
+
+	.search-box .input-box {
+		background-color: rgb(220, 220, 220);
+		border: none;
+		width: calc(100% - 120px);
+		padding: 0 20px;
+		height: 38px;
+		border-radius: 20px;
+		font-size: 16px;
+	}
+
+	.search-box .back {
+		width: 40px;
+		height: 38px;
+		padding-bottom: 3px;
+	}
+
+	.search-box .search {
+		width: 30px;
+		height: 30px;
+		padding: 5px;
+	}
 }
