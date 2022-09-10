@@ -11,7 +11,7 @@ import Icon_feather_settings from "@img/Icon_feather-settings.png";
 import subscribe from "@img/subscribe.png";
 import profile from "@img/pop-cat.gif";
 import { useState, useEffect, useCallback, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Header() {
 	const style = {
@@ -23,6 +23,8 @@ function Header() {
 
 	const [searchDetail, setSearchDetail] = useState<boolean>(false);
 	const headerTop = useRef<HTMLDivElement>(null);
+	const urlPath = useLocation();
+	const [tab, setTab] = useState<string>(`${urlPath.pathname}`);
 
 	let lastScrollY = 0;
 	let nowDirection: string = "";
@@ -37,7 +39,7 @@ function Header() {
 		const direction: string =
 			scrollY > lastScrollY && scrollY >= 48 ? "down" : "up";
 		lastScrollY = scrollY;
-		if (nowDirection !== direction) {
+		if (nowDirection !== direction && urlPath.pathname === "/") {
 			if (direction === "down") {
 				headerTop_cur?.classList.add("up");
 				headerTop_cur?.classList.remove("down");
@@ -48,6 +50,10 @@ function Header() {
 		}
 		nowDirection = direction;
 	}, []);
+
+	const click_menuBtn = (tabStr: string) => {
+		setTab(tabStr);
+	};
 
 	useEffect(() => {
 		window.addEventListener("scroll", handleScroll, { capture: true });
@@ -93,25 +99,58 @@ function Header() {
 				<nav>
 					<ul>
 						<li>
-							<img src={home} alt="" />
-							<div>홈</div>
-						</li>
-						<li>
-							<img src={explore} alt="" />
-							<div>탐색</div>
-						</li>
-						<li>
 							<Link to="/">
-								<img className="upload" src={mobile_upload} alt="" />
+								<div
+									className={`menu-btn ${tab === "/" ? "active" : ""}`}
+									onClick={() => click_menuBtn("/")}
+								>
+									<img src={home} alt="" />
+									<div>홈</div>
+								</div>
 							</Link>
 						</li>
 						<li>
-							<img src={subscribe} alt="" />
-							<div>구독</div>
+							<Link to="/">
+								<div
+									className={`menu-btn ${tab === "/explore" ? "active" : ""}`}
+									onClick={() => click_menuBtn("/explore")}
+								>
+									<img src={explore} alt="" />
+									<div>탐색</div>
+								</div>
+							</Link>
 						</li>
 						<li>
-							<img src={videos} alt="" />
-							<div>영상</div>
+							<Link to="/upload">
+								<img
+									className="upload"
+									onClick={() => click_menuBtn("upload")}
+									src={mobile_upload}
+									alt=""
+								/>
+							</Link>
+						</li>
+						<li>
+							<Link to="/">
+								<div
+									className={`menu-btn ${tab === "/subscribe" ? "active" : ""}`}
+									onClick={() => click_menuBtn("/subscribe")}
+								>
+									<img src={subscribe} alt="" />
+									<div>구독</div>
+								</div>
+							</Link>
+						</li>
+						<li>
+							<Link to="/">
+								<div
+									className={`menu-btn ${tab === "/videos" ? "active" : ""}`}
+									onClick={() => click_menuBtn("/videos")}
+								>
+									<img src={videos} alt="" />
+									<div>영상</div>
+								</div>
+							</Link>
 						</li>
 					</ul>
 				</nav>

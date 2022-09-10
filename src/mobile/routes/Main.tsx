@@ -1,6 +1,6 @@
+import "@mobile/css/contents-container.scoped.scss";
 import Header from "@mobile/component/Header";
 import Video from "@mobile/component/Video";
-import "@mobile/css/contents-container.scoped.scss";
 import { useEffect, useState } from "react";
 
 interface videosProps {

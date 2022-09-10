@@ -50,17 +50,26 @@ ul {
 	}
 
 	#header-bottom ul li {
-		width: 48px;
 		height: 100%;
+		float: left;
+	}
+
+	#header-bottom ul li .menu-btn {
 		display: flex;
 		flex-direction: column;
-		float: left;
+		width: 55px;
+		height: 100%;
+		border-top: 2px solid rgb(245, 245, 245);
+		transition: 0.2s;
+	}
+	#header-bottom ul li .menu-btn.active {
+		border-top: 2px solid black;
 	}
 
 	#header-bottom img:not(.upload) {
 		width: 22px;
 		height: 22px;
-		padding: 4.5px 13px;
+		padding: 2.5px 16px;
 		padding-bottom: 2px;
 	}
 
@@ -140,6 +149,7 @@ ul {
 
 	.search-box .input-box {
 		background-color: rgb(220, 220, 220);
+		outline: none;
 		border: none;
 		width: calc(100% - 120px);
 		padding: 0 20px;
@@ -149,14 +159,16 @@ ul {
 	}
 
 	.search-box .back {
-		width: 40px;
-		height: 38px;
-		padding-bottom: 3px;
+		width: 30px;
+		height: 30px;
+		padding: 10px 5px;
+		padding-top: 8px;
 	}
 
 	.search-box .search {
-		width: 30px;
-		height: 30px;
-		padding: 5px;
+		width: 24px;
+		height: 24px;
+		padding: 12px 10px;
+		padding-top: 13px;
 	}
 }

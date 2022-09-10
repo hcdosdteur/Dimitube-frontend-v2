@@ -1,0 +1,28 @@
+ul {
+	display: flex;
+}
+
+@media (max-width: $breakpoint-tablet) {
+	#component-container {
+		width: 100vw;
+	}
+
+	#component-container > ul {
+		width: 100vw;
+		height: 100px;
+		padding-inline-start: 0px;
+		padding-inline-end: 0px;
+		margin: 0;
+		overflow: scroll;
+	}
+
+	#component-container > ul::-webkit-scrollbar {
+		display: none;
+	}
+
+	.channel-component {
+		width: 100vw;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+}
