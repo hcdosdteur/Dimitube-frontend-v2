@@ -4,13 +4,11 @@ import search from "@img/search.png";
 import home from "@img/home.png";
 import explore from "@img/explore.png";
 import mobile_upload from "@img/mobile_upload_1.png";
-import history from "@img/history.png";
 import videos from "@img/videos.png";
 import back from "@img/back.png";
-import Icon_feather_settings from "@img/Icon_feather-settings.png";
 import subscribe from "@img/subscribe.png";
 import profile from "@img/pop-cat.gif";
-import { useState, useEffect, useCallback, useRef, RefObject } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 function Header() {
