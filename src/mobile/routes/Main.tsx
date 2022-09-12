@@ -1,5 +1,5 @@
 import "@mobile/css/contents-container.scoped.scss";
-import Header from "@mobile/component/Header";
+import Header from "@src/mobile/component/header/Header";
 import Video from "@mobile/component/Video";
 import { useEffect, useState } from "react";
 
@@ -27,7 +27,7 @@ function MobileMain() {
 	return (
 		<div>
 			<Header />
-			<div id="contents-container">
+			<div className="contents-container">
 				{loading ? <div>Loading</div> : null}
 				{videos.map((item: any, idx: number) => {
 					return <Video key={idx} idx={item.idx} />;

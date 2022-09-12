@@ -10,17 +10,10 @@ import back from "@img/back.png";
 import Icon_feather_settings from "@img/Icon_feather-settings.png";
 import subscribe from "@img/subscribe.png";
 import profile from "@img/pop-cat.gif";
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef, RefObject } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 function Header() {
-	const style = {
-		link: {
-			textDecoration: "none",
-			color: "black",
-		},
-	};
-
 	const [searchDetail, setSearchDetail] = useState<boolean>(false);
 	const headerTop = useRef<HTMLDivElement>(null);
 	const urlPath = useLocation();
@@ -71,9 +64,13 @@ function Header() {
 					<img className="search" src={search} alt="" />
 				</Link>
 			</div>
+			<div
+				className={`search-overlay ${searchDetail ? "" : "hidden"}`}
+				onClick={searchToggle}
+			></div>
 			<div id="header-top" ref={headerTop}>
 				<div id="logo-box">
-					<Link style={style.link} to="/">
+					<Link to="/">
 						<img src={logo} alt="" />
 						<div>DmTube</div>
 					</Link>
@@ -86,7 +83,7 @@ function Header() {
 							</button>
 						</li>
 						<li>
-							<Link style={style.link} to="/channel">
+							<Link to="/channel">
 								<div className="btn">
 									<img src={profile} alt="" />
 								</div>

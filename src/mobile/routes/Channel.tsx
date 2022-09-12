@@ -1,4 +1,4 @@
-import Header from "@mobile/component/Header";
+import Header from "@src/mobile/component/header/Header";
 import "@mobile/css/contents-container.scoped.scss";
 import "@mobile/css/channel.scoped.scss";
 
@@ -6,7 +6,7 @@ function Channel() {
 	return (
 		<div>
 			<Header />
-			<div id="contents-container">
+			<div className="contents-container">
 				<div>
 					<div></div>
 					<div>

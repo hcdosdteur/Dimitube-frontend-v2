@@ -7,7 +7,7 @@ ul {
 }
 
 @media (max-width: $breakpoint-tablet) {
-	#header-container > div:not(.search-box) {
+	#header-container > div:not(.search-box, .search-overlay) {
 		position: fixed;
 		width: 100vw;
 		height: 48px;
@@ -16,8 +16,8 @@ ul {
 		align-items: center;
 		justify-content: space-between;
 		background-color: rgb(245, 245, 245);
-		z-index: 100;
 		transition: 0.2s;
+		z-index: 100;
 	}
 
 	#header-top {
@@ -148,27 +148,43 @@ ul {
 	}
 
 	.search-box .input-box {
-		background-color: rgb(220, 220, 220);
+		background-color: rgb(245, 245, 245);
 		outline: none;
 		border: none;
+		border-bottom: 2px solid rgb(220, 220, 220);
 		width: calc(100% - 120px);
-		padding: 0 20px;
-		height: 38px;
-		border-radius: 20px;
+		padding: 0 10px;
+		height: 28px;
 		font-size: 16px;
 	}
 
 	.search-box .back {
-		width: 30px;
-		height: 30px;
-		padding: 10px 5px;
-		padding-top: 8px;
+		width: 26px;
+		height: 26px;
+		padding: 10px 10px;
+	}
+
+	.search-box a {
+		height: 100%;
 	}
 
 	.search-box .search {
 		width: 24px;
 		height: 24px;
-		padding: 12px 10px;
-		padding-top: 13px;
+		padding: 12px 12px;
+	}
+
+	.search-overlay {
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		z-index: 101;
+		width: 100vw;
+		height: calc(100vh - 48px);
+		background-color: rgba(0, 0, 0, 0.4);
+	}
+
+	.search-overlay.hidden {
+		display: none;
 	}
 }
