@@ -1,28 +1,80 @@
 ul {
 	display: flex;
+	width: 100vw;
+	padding-inline-start: 0px;
+	padding-inline-end: 0px;
+	margin: 0;
 }
 
 @media (max-width: $breakpoint-tablet) {
-	#component-container {
+	#user-info {
 		width: 100vw;
+		display: flex;
+		padding: 16px;
+		padding-bottom: 8px;
+		align-items: center;
+		box-sizing: border-box;
 	}
 
-	#component-container > ul {
-		width: 100vw;
-		height: 100px;
-		padding-inline-start: 0px;
-		padding-inline-end: 0px;
-		margin: 0;
-		overflow: scroll;
+	#user-profile {
+		width: 55px;
+		height: 55px;
 	}
 
-	#component-container > ul::-webkit-scrollbar {
+	#user-profile img {
+		width: 55px;
+		height: 55px;
+		border-radius: 50%;
+	}
+
+	#user-info-inner {
+		margin-left: 12px;
+	}
+
+	#user-id {
+		margin-bottom: 3px;
+	}
+
+	#tab-menu ul li {
+		font-size: 14px;
+		text-align: center;
+		padding: 10px 30px;
+	}
+
+	#tab-menu li.pick {
+		border-bottom: 2px solid black;
+	}
+
+	#tab-container {
+		width: 100vw;
+		overflow: hidden;
+	}
+
+	#tab-container > ul.active {
+		transition: 0.2s;
+	}
+
+	#tab-container > ul > li {
+		position: relative;
+		width: 100vw;
+		height: calc(100vh - 215px);
+	}
+
+	#tab-container > ul::-webkit-scrollbar {
 		display: none;
 	}
 
-	.channel-component {
+	.tab-contents {
+		position: relative;
 		width: 100vw;
+		height: 100%;
 		padding: 10px;
+		box-sizing: border-box;
+		overflow: scroll;
+	}
+
+	.tab-contents > div {
+		padding: 50px;
 		box-sizing: border-box;
 	}
 }

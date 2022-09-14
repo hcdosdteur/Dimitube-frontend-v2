@@ -1,4 +1,4 @@
-import Header from "@src/mobile/component/header/Header";
+import Header from "@mobile/component/header/Header";
 import "@mobile/css/contents-container.scoped.scss";
 
 function Search() {

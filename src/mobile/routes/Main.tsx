@@ -1,5 +1,5 @@
 import "@mobile/css/contents-container.scoped.scss";
-import Header from "@src/mobile/component/header/Header";
+import Header from "@mobile/component/header/Header";
 import Video from "@mobile/component/Video";
 import { useEffect, useState } from "react";
 

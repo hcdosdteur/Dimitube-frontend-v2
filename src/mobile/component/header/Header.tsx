@@ -12,16 +12,22 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 function Header() {
-	const [searchDetail, setSearchDetail] = useState<boolean>(false);
-	const headerTop = useRef<HTMLDivElement>(null);
 	const urlPath = useLocation();
+	const [searchDetail, setSearchDetail] = useState<boolean>(false);
 	const [tab, setTab] = useState<string>(`${urlPath.pathname}`);
+	const headerTop = useRef<HTMLDivElement>(null);
+	const search_input = useRef<HTMLInputElement>(null);
 
 	let lastScrollY = 0;
 	let nowDirection: string = "";
 
 	const searchToggle = () => {
-		searchDetail === false ? setSearchDetail(true) : setSearchDetail(false);
+		if (searchDetail === false) {
+			setSearchDetail(true);
+			setTimeout(() => {
+				search_input.current?.focus();
+			}, 10);
+		} else setSearchDetail(false);
 	};
 
 	const handleScroll = useCallback(() => {
@@ -57,7 +63,7 @@ function Header() {
 		<div id="header-container">
 			<div className={`search-box ${searchDetail ? "" : "hidden"}`}>
 				<img className="back" src={back} onClick={searchToggle} alt="" />
-				<input className="input-box" type="text" />
+				<input className="input-box" type="text" ref={search_input} />
 				<Link to="/search">
 					<img className="search" src={search} alt="" />
 				</Link>
